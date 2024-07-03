@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.aensin.gui.MainGuiController">
+   <children>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="800.0">
+         <children>
+            <MenuBar blendMode="SRC_ATOP" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="88.0">
+              <menus>
+                 <Menu mnemonicParsing="false" text="  Menu   ">
+                    <items>
+                         <MenuItem fx:id="menudrucken" mnemonicParsing="false" onAction="#drucken" text="Fitnessplan drucken" />
+                          <MenuItem fx:id="menuUser" mnemonicParsing="false" onAction="#benutzerAnlegen" text="Neuen Benutzer anlegen" />
+                       <MenuItem fx:id="menExit" mnemonicParsing="false" onAction="#programmBeenden" text="Programm beenden" />
+                    </items>
+                 </Menu>
+              </menus>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="15.0" top="4.0" />
+               </padding>
+               <effect>
+                  <Bloom threshold="1.0" />
+               </effect>
+            </MenuBar>
+         </children>
+      </VBox>
+
+
+      <Label prefHeight="46.0" prefWidth="353.0" text="Body-Fitness - Dein Fitnessplan" textFill="#143eb8">
+         <font>
+            <Font name="System Bold Italic" size="24.0" />
+         </font>
+      </Label>
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="78.0" prefWidth="775.0" spacing="20.0">
+         <children>
+            <Label fx:id="lblWillkommen" alignment="CENTER_RIGHT" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="74.0" prefWidth="356.0" text="Willkommen">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblName" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="77.0" prefWidth="149.0">
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="30.0" />
+         </padding>
+         <VBox.margin>
+            <Insets bottom="50.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="527.0" spacing="10.0">
+         <children>
+            <Label text="Datum: ">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDatum" text="Label">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets bottom="20.0" />
+         </VBox.margin>
+      </HBox>
+      <ListView fx:id="lvFitnessPlan" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="247.0" prefWidth="700.0">
+         <VBox.margin>
+            <Insets bottom="50.0" />
+         </VBox.margin>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+      </ListView>
+      <HBox prefHeight="90.0" prefWidth="636.0" spacing="65.0">
+         <children>
+            <Button fx:id="btnhinzufuegen" contentDisplay="CENTER" mnemonicParsing="false" onAction="#hinzufuegen" prefHeight="40.0" prefWidth="160.0" text="Zeile hinzufügen" textFill="#067c16">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnaendern" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#aendern" prefHeight="40.0" prefWidth="160.0" text="Zeile Ändern" textFill="#067c16">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnloeschen" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#loeschen" prefHeight="40.0" prefWidth="160.0" text="Zeile löschen" textFill="#067c16">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="5.0" top="20.0" />
+         </padding>
+         <VBox.margin>
+            <Insets left="100.0" right="40.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="103.0" prefWidth="600.0" spacing="65.0">
+         <padding>
+            <Insets bottom="20.0" left="5.0" top="20.0" />
+         </padding>
+         <children>
+            <Button fx:id="btngewicht" mnemonicParsing="false" onAction="#gewichtsDifferenz" prefHeight="72.0" prefWidth="160.0" text="Gewichtsdifferenz anzeigen" textFill="#0f19da" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnbmi" mnemonicParsing="false" onAction="#anzeigenBMI" prefHeight="72.0" prefWidth="160.0" text="Aktuellen BMI anzeigen" textFill="#0f19da" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnexport" mnemonicParsing="false" onAction="#exportCsv" prefHeight="72.0" prefWidth="160.0" text="Fitnessplan exportieren" textFill="#0f19da" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets left="100.0" right="40.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>
